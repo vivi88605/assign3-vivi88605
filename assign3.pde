@@ -8,7 +8,8 @@ final int START_BUTTON_X = 248;
 final int START_BUTTON_Y = 360;
 
 PImage title, gameover, startNormal, startHovered, restartNormal, restartHovered;
-PImage bg, soil8x24;
+PImage bg, soil8x24, soil0, soil1,soil2,soil3,soil4,soil5;
+PImage stone1, stone2,life;
 
 // For debug function; DO NOT edit or remove this!
 int playerHealth = 0;
@@ -26,6 +27,18 @@ void setup() {
 	restartNormal = loadImage("img/restartNormal.png");
 	restartHovered = loadImage("img/restartHovered.png");
 	soil8x24 = loadImage("img/soil8x24.png");
+
+  soil0 = loadImage("img/soil0.png");
+  soil1 = loadImage("img/soil1.png");
+  soil2 = loadImage("img/soil2.png");
+  soil3 = loadImage("img/soil3.png");
+  soil4 = loadImage("img/soil4.png");
+  soil5 = loadImage("img/soil5.png");
+  
+  stone1 = loadImage("img/stone1.png");
+  stone2 = loadImage("img/stone2.png");
+  
+  life = loadImage("img/life.png");
 }
 
 void draw() {
@@ -82,7 +95,58 @@ void draw() {
 		rect(0, 160 - GRASS_HEIGHT, width, GRASS_HEIGHT);
 
 		// Soil - REPLACE THIS PART WITH YOUR LOOP CODE!
-		image(soil8x24, 0, 160);
+		/*for(int i=0 ; i<width; i+=80){
+    int soilX=i; int soilY=160;
+    image(soil0, soilX, soilY);
+    }*/
+    
+    for(int i=0 ; i<width; i+=80){
+      for(int j=160 ; j<320+160; j+=80){
+    int soilX=i; int soilY=j;
+    image(soil0, soilX, soilY);
+    }}
+    
+    for(int i=0 ; i<width; i+=80){
+      for(int j=480 ; j<640+160; j+=80){
+    int soilX=i; int soilY=j;
+    image(soil1, soilX, soilY);
+    }}
+    
+    for(int i=0 ; i<width; i+=80){
+      for(int j=800 ; j<960+160; j+=80){
+    int soilX=i; int soilY=j;
+    image(soil2, soilX, soilY);
+    }}
+    
+    for(int i=0 ; i<width; i+=80){
+      for(int j=1120 ; j<1280+160; j+=80){
+    int soilX=i; int soilY=j;
+    image(soil3, soilX, soilY);
+    }}
+    
+    for(int i=0 ; i<width; i+=80){
+      for(int j=1440 ; j<1600+160; j+=80){
+    int soilX=i; int soilY=j;
+    image(soil4, soilX, soilY);
+    }}
+    
+    for(int i=0 ; i<width; i+=80){
+      for(int j=1760 ; j<1920+160; j+=80){
+    int soilX=i; int soilY=j;
+    image(soil5, soilX, soilY);
+    }}
+    
+    //1star stone
+    for(int i=0; i<width; i+=80){
+    int stone1X= i ; int stone1Y = i+160;
+    image(stone1,stone1X,stone1Y);
+}
+
+    //life
+    for(int i = 10; i<71*5+10; i+=71){
+    int lifeX=i; int lifeY=10;
+    image(life, lifeX, lifeY);
+    }
 
 		// Player
 
