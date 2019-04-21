@@ -12,7 +12,7 @@ PImage bg, soil8x24, soil0, soil1,soil2,soil3,soil4,soil5;
 PImage stone1, stone2,life;
 
 // For debug function; DO NOT edit or remove this!
-int playerHealth = 0;
+int playerHealth = 2;
 float cameraOffsetY = 0;
 boolean debugMode = false;
 
@@ -142,16 +142,16 @@ void draw() {
     image(stone1,stone1X,stone1Y);
 }
 
-    //life
-    for(int i = 10; i<71*5+10; i+=71){
-    int lifeX=i; int lifeY=10;
-    image(life, lifeX, lifeY);
-    }
-
 		// Player
 
 		// Health UI
-
+    if (playerHealth <= 5){
+      for(int i = 0; i<playerHealth ;i++){
+        int x = 10+i*70;
+        int y = 10;
+          image(life,x,y);       
+      }
+    }
 		break;
 
 		case GAME_OVER: // Gameover Screen
